@@ -5,15 +5,12 @@ public class Recurs {
             private void getAllSubFoldersInPath(File path) {
                 File[] files=path.listFiles();
                 try {
-                    for(File file: files)
-                    {
-                        if(file.isDirectory()) // Проверяет что путь это директория а не файл
-                        {
+                    for(File file: files) {
+                        if(file.isDirectory()) {// Проверяет что путь это директория а не файл
+
                             System.out.println("DIRECTORY:"+file.getCanonicalPath()); // Указывает уникальный путь папки
                             getAllSubFoldersInPath(file);// Рекурсивно найти файлы
-                        }
-                        else
-                        {
+                        } else {
                             System.out.println("FILE: "+file.getCanonicalPath());
                         }
                     }
