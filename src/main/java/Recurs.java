@@ -1,4 +1,7 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class Recurs {
     static FileOutputStream fos;
@@ -24,16 +27,34 @@ public class Recurs {
     }
     public static void main(String[] args) throws IOException {
         Recurs fw = new Recurs();
-        try
-        {
-            fos=new FileOutputStream("D:\\\\гк\\\\Androidi/notes.txt");
-            fw.getAllSubFoldersInPath(new File("D:\\гк\\Androidi"));
+
+        try {
+// Каждый раз добавляет в существующий
+            fos=new FileOutputStream("D:\\Android/notes.txt",true);
+            String s = "\n====================\n";
+            fos.write(s.getBytes(), 0, s.getBytes().length);
+
+            fw.getAllSubFoldersInPath(new File("D:\\Android"));
             System.out.println("The file has been written");
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+        finally {
             fos.close();
         }
-        catch(IOException ex){
+
+        //Каждый раз создает новый файл или перезаписывает его
+
+        /*  try {
+            fos=new FileOutputStream("D:\\Android/notes.txt");
+            fw.getAllSubFoldersInPath(new File("D:\\Android"));
+        } catch(IOException ex){
 
             System.out.println(ex.getMessage());
         }
-    }
+        finally {
+            fos.close();
+        }
+   */ }
 }
