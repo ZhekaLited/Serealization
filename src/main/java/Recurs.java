@@ -21,16 +21,12 @@ public class Recurs {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public static void main(String[] args) throws IOException {
         Recurs fw = new Recurs();
         try
         {
             fos=new FileOutputStream("D:\\\\гк\\\\Androidi/notes.txt");
-            // перевод строки в байты
-            //byte[] buffer = text.getBytes();
-
             fw.getAllSubFoldersInPath(new File("D:\\гк\\Androidi"));
             System.out.println("The file has been written");
             fos.close();
@@ -40,4 +36,4 @@ public class Recurs {
             System.out.println(ex.getMessage());
         }
     }
-        }
+}
