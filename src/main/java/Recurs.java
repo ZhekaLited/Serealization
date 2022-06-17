@@ -25,7 +25,6 @@ public class Recurs {
     }
     public static void main(String[] args) throws IOException {
         Recurs fw = new Recurs();
-        String text = "Hello world!"; // строка для записи
         try
         {
             fos=new FileOutputStream("D:\\\\гк\\\\Androidi/notes.txt");
