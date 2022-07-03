@@ -21,3 +21,10 @@ public class WriteObject {
         }
     }
 }
+
+
+///////////////////////////////////Massive/////////////////////////////////////////////////////////
+
+Serial[] people = {new Serial(1,"Bob"),new Serial(2,"Jack"),new Serial(3,"Adam")};
+   
+oot.writeObject(people);
